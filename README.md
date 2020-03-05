@@ -10,29 +10,29 @@ This uses Unity's [Tennis](https://github.com/Unity-Technologies/ml-agents/blob/
 
 ![Trained Agent][image1]
 
-(the image above has multiple robot arms, but in this repository, only one robot arm is implemented)
 
 #### Conditions
 
 A double-jointed arm can move to target locations. A reward of +0.1 is provided for each step that the agent's hand is in the goal location. Thus, the goal of your agent is to maintain its position at the target location for as many time steps as possible.
 
 #### Reward
-- +0.1 hit the ball over the net 
-- -0.01 let the ball hit the ground
-- -0.01 let the ball hit out of bounds
+- +0.1 if hit the ball over the net 
+- -0.01 if let the ball hit the ground
+- -0.01 if let the ball hit out of bounds
 - The score is rewarded to both players
 
 #### State Space
 
 - Continuous 8 dimensions
 - They correspond to:
-    - positions
-    - velocities
-    - above for the ball and the racket
+    - positions (2)
+    - velocities (2)
+    - above for the ball and the racket (x2)
 - Each player observes independently
 
 #### Action Space
-- Continuous 2 dimensions (movement toward net, jumping)
+- Continuous 2 dimensions
+    - racket's movement toward net and jumping 
     - Each player takes actions independently 
     - Each has range of [-1, 1]
 
