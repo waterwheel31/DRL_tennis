@@ -38,18 +38,24 @@ A double-jointed arm can move to target locations. A reward of +0.1 is provided 
 
 ####  Goal of the agent 
 
-- get an average episode score of more than +5  
+- get an average episode score of more than +0.5  
 - the look back period to calculate the average is 100 consecutive eposodes 
 
 <hr>
 
 ## Used Algorithm 
 
+- For the agents, used DDPG method
+- Used simple NN for each of actor and critic nettwork.
 
 
 #### Performance
 
-- 
+The agents learned the tennis and achieved +0.5 point score in average around in 900 episodes. 
+
+![image](./train_score_tennis.png)
+-
+
 
 
 
@@ -57,17 +63,18 @@ A double-jointed arm can move to target locations. A reward of +0.1 is provided 
 #### Ideas for Future Work
 
 - Architecture: Currently, just used simple NN. Going forward, using more complex architecture may improve the score
-- Hyperparameter: the parameter has not been fully optimized. Here is another opportunity of improvement
+- Hyperparameter: the parameter has not been fully optimized. Here is another opportunity of improvement. (ex. Decay of noise can be introduced) 
+- Replay Buffer: Since the play ground is symmetry, it may increase the training efficiency if the flipped results are added to the training samples
 
 
 <hr>
 
-## How to Run
+## Trained Model
 
-- The trained model is `checkpoint.pth`. You can use this on Unity environment
+- The trained model is `checkpoint_actor.pth`. You can use this on Unity environment mentioned below
 
 
-#### Dependencies
+#### Dependencies Settting
 
 1. Download the Unity environment from one of the links below
     - Linux: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis_Linux.zip)
