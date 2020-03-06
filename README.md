@@ -46,7 +46,16 @@ A double-jointed arm can move to target locations. A reward of +0.1 is provided 
 ## Used Algorithm 
 
 - For the agents, used DDPG method
-- Used simple NN for each of actor and critic nettwork.
+- Used simple NN for each of actor and critic network as following:
+    - actor network
+        - 3 fully connected layers with ReLu and Tanh activation functions 
+        - The first two have size of 128 
+        - last layer's output size = action size (4)
+    - critic network
+        - 3 fully connected layers with ReLu and Tanh activation functions
+        - the first layer size = 128
+        - second layer size = 128 + action size (4)
+        - last layer's output size = 1
 
 
 #### Performance
